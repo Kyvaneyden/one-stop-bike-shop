@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=IBM+Plex+Sans+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+    <title>Products - One Stop Shop</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-item">One stop Shop</h1>
+        <div>
+            <a href="#" id="cart-logo"><button><img src="../static/shopping-cart.jpg" alt="Cart icon" width="50px"></button></a>
+        </div>
+    </header>
+    <div class="body">
+        <nav class="nav-bar">
+            <ul class="nav-area">
+                <li class="nav-list"><a href="/">Homepage</a></li>
+                <li class="nav-list"><a href="/products">Product List</a></li>
+                <li class="nav-list"><a href="/admin">Admin Portal</a></li>
+                <li class="nav-list"><a href="/about">about</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="main-content">
+        <table>
+            <tr>
+                <th></th>
+                {% for product in products[0] %}
+                <th>{{product}}</th>
+                {% endfor %}
+                <th></th>
+            </tr>
+            {% for product in products[1:] %}
+            <tr>
+                <td>image</td>
+                {% for item in product %}
+                <td>{{item}}</td>
+                {% endfor %}
+                <td><input type="button" value="Add to Cart"></td>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+    <footer>
+        <ul class="contact">
+            <li>Contact Us</li>
+            <li>Location</li>
+        </ul>
+    </footer>
+</body>
+</html>
